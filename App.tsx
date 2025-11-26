@@ -66,7 +66,7 @@ const App: React.FC = () => {
       <header className="relative z-40 w-full shrink-0 flex justify-between items-center px-6 py-4 md:py-6 bg-slate-900/20 backdrop-blur-md border-b border-white/5 shadow-sm">
         <div className="flex items-center gap-4">
            <div className="text-xl md:text-2xl font-bold tracking-widest uppercase font-oswald text-white/90 drop-shadow-md select-none">
-             I HATE THIS <span className={`text-xs align-top ${currentPres.accentColor} font-normal ml-1`}>no really</span>
+             I FUCKING HATE <span className={`text-xs align-top ${currentPres.accentColor} font-normal ml-1 line-through`}> RKN</span>
            </div>
         </div>
 
