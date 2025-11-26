@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { PRESENTATIONS } from './constants';
 import { SlideRenderer } from './components/SlideRenderer';
-import { AiAssistant } from './components/AiAssistant';
 import { ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -112,7 +111,8 @@ const App: React.FC = () => {
 
       {/* MAIN CONTENT: Overflow Hidden to prevent scrolling */}
       <main className="relative z-10 flex-1 w-full overflow-hidden flex flex-col">
-        <div className="flex-1 w-full flex items-center justify-center p-6 md:p-12 lg:px-24 lg:py-14">
+        {/* Adjusted padding to give more breathing room on top/bottom/sides */}
+        <div className="flex-1 w-full flex items-center justify-center px-8 py-10 md:px-16 md:py-20 lg:px-32 lg:py-24">
             <div 
               className="w-full max-w-7xl h-full flex flex-col justify-center" 
               key={`${activePresId}-${activeSlideIdx}`} // Forces animation reset
@@ -126,7 +126,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* FIXED OVERLAYS (Navigation, AI, Progress) */}
+      {/* FIXED OVERLAYS (Navigation, Progress) */}
       
       {/* Nav Buttons (Absolute relative to viewport) */}
       <div className="fixed top-1/2 -translate-y-1/2 left-4 z-30 hidden lg:block">
@@ -161,9 +161,6 @@ const App: React.FC = () => {
       <div className="fixed bottom-4 left-4 z-30 text-xs font-mono text-white/30 hidden md:block bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/5">
         SLIDE {activeSlideIdx + 1} / {totalSlides}
       </div>
-
-      {/* AI Assistant */}
-      <AiAssistant currentSlide={currentSlide} presentationTitle={currentPres.title} />
       
     </div>
   );
