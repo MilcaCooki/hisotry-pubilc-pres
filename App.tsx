@@ -48,7 +48,7 @@ const App: React.FC = () => {
   return (
     // ROOT CONTAINER: Flex Column, H-Screen. 
     // This structure ensures Header and Main stack vertically without overlap.
-    <div className="relative w-full h-screen flex flex-col overflow-hidden text-white transition-colors duration-1000 bg-slate-900 font-inter">
+    <div className="relative w-full min-h-screen flex flex-col overflow-y-auto md:overflow-hidden text-white transition-colors duration-1000 bg-slate-900 font-inter">
       
       {/* Dynamic Background Layer (Absolute behind everything) */}
       <div 
@@ -110,7 +110,7 @@ const App: React.FC = () => {
       )}
 
       {/* MAIN CONTENT: Overflow Hidden to prevent scrolling */}
-      <main className="relative z-10 flex-1 w-full overflow-hidden flex flex-col">
+      <main className="relative z-10 flex-1 w-full overflow-y-auto md:overflow-hidden flex flex-col">
         {/* Adjusted padding to give more breathing room on top/bottom/sides */}
         <div className="flex-1 w-full flex items-center justify-center px-8 py-10 md:px-16 md:py-20 lg:px-32 lg:py-24">
             <div 
