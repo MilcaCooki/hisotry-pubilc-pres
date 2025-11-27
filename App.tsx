@@ -182,7 +182,7 @@ const App: React.FC = () => {
       <header className="relative z-40 w-full shrink-0 flex justify-between items-center px-6 py-4 md:py-6 bg-slate-900/20 backdrop-blur-md border-b border-white/5 shadow-sm">
         <div className="flex items-center gap-4">
            <div className="text-xl md:text-2xl font-bold tracking-widest uppercase font-oswald text-white/90 drop-shadow-md select-none flex items-center gap-2">
-             I HATE <span className="text-sm md:text-lg tracking-normal opacity-80 font-sans normal-case line-through">РКН</span>
+             I LOVE <span className="text-sm md:text-lg tracking-normal opacity-80 font-sans normal-case line-through">РКН</span>
            </div>
         </div>
 
