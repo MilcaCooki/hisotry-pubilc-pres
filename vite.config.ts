@@ -18,6 +18,11 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        assetsInlineLimit: 100000000, // Increase limit to ensure all assets are inlined
+        outDir: 'docs', // ⬅️ ADD OR CHANGE THIS
+      },
+      base: '/hisotry-pubilc-pres/',
     };
 });
