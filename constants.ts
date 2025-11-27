@@ -1,3 +1,4 @@
+
 import { Presentation } from './types';
 
 export const PRESENTATIONS: Presentation[] = [
@@ -178,10 +179,11 @@ export const PRESENTATIONS: Presentation[] = [
     id: 2,
     title: "Федеральное Собрание РФ",
     shortTitle: "Парламентаризм",
-    themeGradient: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-red-900 via-rose-950 to-slate-900",
-    accentColor: "text-rose-400",
-    secondaryColor: "text-orange-300",
-    accentColorHex: "#fb7185",
+    // Imperial Purple and Gold - "Tyrian Purple"
+    themeGradient: "bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#3b0764] via-[#1e1b4b] to-black",
+    accentColor: "text-amber-300", // Bright Gold
+    secondaryColor: "text-purple-300", // Soft Purple
+    accentColorHex: "#fcd34d", // Amber-300
     slides: [
       {
         title: "1. Структура Парламента",

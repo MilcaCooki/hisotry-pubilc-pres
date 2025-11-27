@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I HATE THIS</title>
+    <title>POLIS: Единая Система Презентаций</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +29,30 @@
         100% { transform: translateY(0px) rotate(0deg); }
       }
 
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+      }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes scan {
+        0% { top: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+
+      @keyframes flicker {
+        0% { opacity: 0.1; }
+        5% { opacity: 0.2; } /* Reduced from 0.5 for subtlety */
+        10% { opacity: 0.1; }
+        100% { opacity: 0.1; }
+      }
+
       .animate-slide-in {
         animation: slideInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         opacity: 0; /* Start invisible */
@@ -43,14 +66,36 @@
       .animate-float {
         animation: float 12s ease-in-out infinite;
       }
+      
+      .animate-pulse-slow {
+        animation: pulse-slow 6s ease-in-out infinite;
+      }
+
+      .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+
+      .animate-scan {
+        animation: scan 8s linear infinite;
+      }
+
+      .animate-flicker {
+        animation: flicker 4s infinite;
+      }
 
       /* --- UI ELEMENTS --- */
       .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
         border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .glass-panel-highlight {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(255,255,255,0.02);
       }
       
       body {
@@ -58,8 +103,6 @@
         background-color: #0f172a;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        /* Scrollbar styles for the body are generally hidden in this app structure 
-           because the scrolling happens in <main> */
       }
       
       h1, h2, h3, .font-oswald {
@@ -70,7 +113,7 @@
         font-family: 'Merriweather', serif;
       }
 
-      /* Custom Scrollbar for Main Content & Chat */
+      /* Custom Scrollbar */
       * {
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
@@ -100,14 +143,13 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
   }
 }
 </script>
 </head>
 <body class="bg-slate-900 text-slate-50 antialiased selection:bg-indigo-500 selection:text-white">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
